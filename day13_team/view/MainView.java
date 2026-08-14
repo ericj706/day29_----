@@ -55,8 +55,6 @@ public class MainView {
                 else if (ch==5) { break; }
                 else { System.out.println("잘못된 입력입니다."); }
             }
-
-
         }
     
     
