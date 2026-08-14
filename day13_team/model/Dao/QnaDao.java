@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import day13_team.model.Dto.BoardDto;
 import day13_team.model.Dto.QnaDto;
 
 public class QnaDao extends BaseDao {

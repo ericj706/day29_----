@@ -40,38 +40,40 @@ public class MainView {
 
     // 게시글관리
     
-        private BoardController bc = BoardController.getInstance();
+        //private BoardController bc = BoardController.getInstance();
         private void boardMenu() {
-        while (true) {
-            System.out.println("\n--- [게시물 관리] ---");
-            System.out.print("1.등록 2.목록 3.수정 4.삭제 5.이전메뉴");
-            System.out.println("\n 선택 > ");
-            String ch = scan.next();
+            while (true) {
+                System.out.println("\n--- [게시물 관리] ---");
+                System.out.print("1.등록 2.목록 3.수정 4.삭제 5.이전메뉴");
+                System.out.println("\n 선택 > ");
+                int ch = scan.nextInt();
 
-            if (ch.equals("1")) {  }
-            else if (ch.equals("2")) {  }
-            else if (ch.equals("3")) { break; }
-            else { System.out.println("잘못된 입력입니다."); }
+                if (ch==1) { boardSave(); }
+                else if (ch==2) { boardFindAll(); }
+                else if (ch==3) { boardUpdate();  }
+                else if (ch==4) { boardDelete(); }
+                else if (ch==5) { break; }
+                else { System.out.println("잘못된 입력입니다."); }
+            }
+
+            
         }
-    
-
-    }
     
     
     // 문의글 관리
-    
         private QnaController qc = QnaController.getInstance();
-
         private void qnaMenu() {
             while (true) {
                 System.out.println("\n--- [문의글 관리] ---");
                 System.out.print("1.등록 2.목록 3.수정 4.삭제 5.이전메뉴");
                 System.out.println("\n 선택 > ");
-                String ch = scan.next();
+                int ch = scan.nextInt();
 
-                if (ch.equals("1")) {  }
-                else if (ch.equals("2")) {  }
-                else if (ch.equals("3")) { break; }
+                if (ch==1) { qnaSave(); }
+                else if (ch==2) { qnaFindAll(); }
+                else if (ch==3) { qnaUpdate();  }
+                else if (ch==4) { qnaDelete(); }
+                else if (ch==5) { break; }
                 else { System.out.println("잘못된 입력입니다."); }
             }
         }   
@@ -93,7 +95,6 @@ public class MainView {
             System.out.println( dto.getNo()+" / "+dto.getWriter()+" / " +dto.getQuestion() );
             }
         }
-
         // [3] 개별수정 VIEW
         public void qnaUpdate( ){
             
@@ -104,7 +105,6 @@ public class MainView {
             if( result ){ System.out.println(">수정 성공"); }
             else{ System.out.println(">수정 실패(없는 번호)"); }
         }
-
         // [4] 개별삭제 VIEW
         public void qnaDelete( ){
             
