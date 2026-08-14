@@ -15,7 +15,7 @@ public class BoardController {
 
     // [1] 등록 Controller
     public boolean boardSave( BoardDto boardDto ){
-        boolean result = bd.save( boardDto ); // view에게 전달받은 매개변수을 dao에게전달
+        boolean result = bd.boardSave( boardDto ); // view에게 전달받은 매개변수을 dao에게전달
         return result; // dao에게 받은 결과을 view 반환
 
     }

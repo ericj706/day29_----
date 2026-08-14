@@ -68,7 +68,7 @@ public class BoardDao extends BaseDao {
     }
 
     // [4] 개별삭제 DAO 
-    public boolean delboardDeletete( int no ){
+    public boolean boardDelete( int no ){
         try{ String sql = "delete from board where no = ?";
             PreparedStatement ps = conn.prepareStatement( sql );
             ps.setInt( 1 , no ); // SQL 문법내 첫번째 ? 에 매개변수 값 대입 
