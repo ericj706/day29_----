@@ -56,7 +56,7 @@ public class MainView {
                 else { System.out.println("잘못된 입력입니다."); }
             }
 
-            
+
         }
     
     
@@ -80,7 +80,6 @@ public class MainView {
         
         // [1] 저장 VIEW
         public void qnaSave( ){
-            
             System.out.print("문의글: ");   String 문의글 = scan.next();  // 1.1 저장할 자료 입력받기 
             System.out.print("작성자: ");   String 작성자 = scan.next();
             QnaDto qnaDto = new QnaDto(0, 문의글, 작성자); // 1.2 자료 객체화하기 , no(아무거나/사용X)
@@ -97,7 +96,6 @@ public class MainView {
         }
         // [3] 개별수정 VIEW
         public void qnaUpdate( ){
-            
             System.out.print("수정할번호: ");   int 수정할번호 = scan.nextInt();
             System.out.print("수정할내용: ");   String 수정할내용 = scan.next();
             QnaDto qnaDto = new QnaDto(수정할번호, 수정할내용, null ); // writer 사용안함.null
@@ -107,7 +105,6 @@ public class MainView {
         }
         // [4] 개별삭제 VIEW
         public void qnaDelete( ){
-            
             System.out.print("삭제할번호: ");   int 삭제할번호 = scan.nextInt();
             boolean result = qc.qnaDelete( 삭제할번호 ); // 매개변수가 1개 이므로 dto 없이
             if( result ){ System.out.println(">삭제 성공"); }
