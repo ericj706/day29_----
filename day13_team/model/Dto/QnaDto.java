@@ -1,6 +1,5 @@
 package day13_team.model.Dto;
 
-
 public class QnaDto {
 
     private int no;

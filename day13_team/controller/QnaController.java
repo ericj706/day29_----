@@ -1,7 +1,6 @@
 package day13_team.controller;
 
 import java.util.ArrayList;
-
 import day13_team.model.Dao.QnaDao;
 import day13_team.model.Dto.QnaDto;
 

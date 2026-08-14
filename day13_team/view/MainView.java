@@ -56,7 +56,40 @@ public class MainView {
                 else { System.out.println("잘못된 입력입니다."); }
             }
         }
-    
+        // [1] 등록 VIEW
+        public void boardSave( ){
+            System.out.print("내용: ");     String 내용 = scan.next();  // 1.1 저장할 자료 입력받기 
+            System.out.print("작성자: ");   String 작성자 = scan.next();
+            BoardDto boardDto = new BoardDto(0, 내용, 작성자); // 1.2 자료 객체화하기 , no(아무거나/사용X)
+            boolean result = bc.save( boardDto ); // 1.3 컨트롤러 에게 전달(dto) 하여 응답(boolean) 받기 
+            if( result ){ System.out.println(">등록성공");} // 1.4 응답받은 결과로 출력
+            else{ System.out.println(">등록실패"); }
+        }
+        // [2] 전체조회 VIEW
+        public void boardFindAll( ){
+            ArrayList<BoardDto> result = bc.boardFindAll();// 1. 컨트롤러에게 요청하고 모든 게시물정보 들을 받는다.
+            for( BoardDto dto : result ){// 2. 반복문 이용하여 게시물정보들을 출력 
+                System.out.println( dto.getNo()+" / "+dto.getWriter()+" / " +dto.getContent() );
+            }
+        }
+        // [3] 개별수정 VIEW
+        public void boardUpdate( ){
+            System.out.print("수정할번호: ");   int 수정할번호 = scan.nextInt();
+            System.out.print("수정할내용: ");   String 수정할내용 = scan.next();
+            BoardDto boardDto = new BoardDto(수정할번호, 수정할내용, null ); // writer 사용안함.null
+            boolean result = bc.boardUpdate( boardDto );
+            if( result ){ System.out.println(">수정 성공"); }
+            else{ System.out.println(">수정 실패(없는 번호)"); }
+        }
+        // [4] 개별삭제 VIEW
+        public void boardDelete( ){
+            System.out.print("삭제할번호: ");   int 삭제할번호 = scan.nextInt();
+            boolean result = bc.boardDelete( 삭제할번호 ); // 매개변수가 1개 이므로 dto 없이
+            if( result ){ System.out.println(">삭제 성공"); }
+            else{ System.out.println(">삭제 실패(없는 번호)"); }
+        }
+         
+
     
     // 문의글 관리
         private QnaController qc = QnaController.getInstance();
