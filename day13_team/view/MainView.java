@@ -40,7 +40,7 @@ public class MainView {
 
     // 게시글관리
     
-        //private BoardController bc = BoardController.getInstance();
+        private BoardController bc = BoardController.getInstance();
         private void boardMenu() {
             while (true) {
                 System.out.println("\n--- [게시물 관리] ---");
@@ -61,7 +61,7 @@ public class MainView {
             System.out.print("내용: ");     String 내용 = scan.next();  // 1.1 저장할 자료 입력받기 
             System.out.print("작성자: ");   String 작성자 = scan.next();
             BoardDto boardDto = new BoardDto(0, 내용, 작성자); // 1.2 자료 객체화하기 , no(아무거나/사용X)
-            boolean result = bc.save( boardDto ); // 1.3 컨트롤러 에게 전달(dto) 하여 응답(boolean) 받기 
+            boolean result = bc.boardSave( boardDto ); // 1.3 컨트롤러 에게 전달(dto) 하여 응답(boolean) 받기 
             if( result ){ System.out.println(">등록성공");} // 1.4 응답받은 결과로 출력
             else{ System.out.println(">등록실패"); }
         }
