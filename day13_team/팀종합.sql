@@ -15,4 +15,4 @@ CREATE TABLE qna(
     writer VARCHAR(30) ,
     FOREIGN KEY(no) REFERENCES board(no)
 );
-insert into qna( question, writer )values( "안녕하세요", "이경규" ),( "문의있어요", "하하");
+insert into qna( question, writer )values( "안녕하세요", "유재석" ),( "문의있어요", "강호동");
