@@ -1,4 +1,4 @@
-package day13_팀종합;
+package day13_team;
 public class AppStart {
     public static void main(String[] args) {
         
